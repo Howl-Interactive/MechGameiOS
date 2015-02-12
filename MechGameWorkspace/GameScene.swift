@@ -9,37 +9,54 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-        
-        self.addChild(myLabel)
+    
+    var touch: CGPoint?
+    
+    var objs = [Object]()
+    var p: Player
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("NSCoder not supported")
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
+    override init(size: CGSize) {
+        p = Player(x: WIDTH / 2, y: 200)
+        super.init(size: size)
+        addObject(p)
+        for var j: CGFloat = 14; j >= 0; j-- {
+            for var i: CGFloat = 0; i < 9; i++ {
+                if j % 4 == 0 {
+                    addObject(Road(x: i * 40, y: j * 40, vertical: false))
+                }
+                else if i % 3 == 1 {
+                    addObject(Road(x: i * 40, y: j * 40, vertical: true))
+                }
+                else {
+                    addObject(Building(x: i * 40, y: j * 40))
+                }
+            }
         }
     }
-   
+    
+    func addObject(obj: Object) {
+        objs.append(obj)
+        addChild(obj.sprite)
+    }
+    
     override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+        for obj in objs {
+            if let t = touch {
+                obj.onTouch(t)
+            }
+            obj.update(currentTime)
+        }
+    }
+    
+    func onTouch(point: CGPoint) {
+        touch = point
+    }
+    
+    func onTouchRelease() {
+        touch = nil
     }
 }

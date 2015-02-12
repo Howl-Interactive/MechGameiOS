@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		5E75E3A61A8BED1800F8EF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3A51A8BED1800F8EF8E /* AppDelegate.swift */; };
-		5E75E3A81A8BED1800F8EF8E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5E75E3A71A8BED1800F8EF8E /* GameScene.sks */; };
 		5E75E3AA1A8BED1800F8EF8E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3A91A8BED1800F8EF8E /* GameScene.swift */; };
 		5E75E3AC1A8BED1800F8EF8E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3AB1A8BED1800F8EF8E /* GameViewController.swift */; };
 		5E75E3AF1A8BED1800F8EF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E75E3AD1A8BED1800F8EF8E /* Main.storyboard */; };
 		5E75E3B11A8BED1800F8EF8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E75E3B01A8BED1800F8EF8E /* Images.xcassets */; };
 		5E75E3B41A8BED1800F8EF8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E75E3B21A8BED1800F8EF8E /* LaunchScreen.xib */; };
 		5E75E3C01A8BED1800F8EF8E /* MechGameWorkspaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3BF1A8BED1800F8EF8E /* MechGameWorkspaceTests.swift */; };
+		5E75E3CA1A8BEDD000F8EF8E /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3C91A8BEDD000F8EF8E /* Object.swift */; };
+		5E75E3CC1A8C036200F8EF8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3CB1A8C036200F8EF8E /* Constants.swift */; };
+		5E75E3CE1A8C106500F8EF8E /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3CD1A8C106500F8EF8E /* Building.swift */; };
+		5E75E3D01A8C107000F8EF8E /* Road.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3CF1A8C107000F8EF8E /* Road.swift */; };
+		5E75E3D21A8C54AC00F8EF8E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3D11A8C54AC00F8EF8E /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +35,6 @@
 		5E75E3A01A8BED1800F8EF8E /* MechGameWorkspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MechGameWorkspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E75E3A41A8BED1800F8EF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E75E3A51A8BED1800F8EF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E75E3A71A8BED1800F8EF8E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		5E75E3A91A8BED1800F8EF8E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		5E75E3AB1A8BED1800F8EF8E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5E75E3AE1A8BED1800F8EF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +43,11 @@
 		5E75E3B91A8BED1800F8EF8E /* MechGameWorkspaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MechGameWorkspaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E75E3BE1A8BED1800F8EF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E75E3BF1A8BED1800F8EF8E /* MechGameWorkspaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechGameWorkspaceTests.swift; sourceTree = "<group>"; };
+		5E75E3C91A8BEDD000F8EF8E /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		5E75E3CB1A8C036200F8EF8E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5E75E3CD1A8C106500F8EF8E /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		5E75E3CF1A8C107000F8EF8E /* Road.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Road.swift; sourceTree = "<group>"; };
+		5E75E3D11A8C54AC00F8EF8E /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +90,17 @@
 			isa = PBXGroup;
 			children = (
 				5E75E3A51A8BED1800F8EF8E /* AppDelegate.swift */,
-				5E75E3A71A8BED1800F8EF8E /* GameScene.sks */,
 				5E75E3A91A8BED1800F8EF8E /* GameScene.swift */,
 				5E75E3AB1A8BED1800F8EF8E /* GameViewController.swift */,
 				5E75E3AD1A8BED1800F8EF8E /* Main.storyboard */,
 				5E75E3B01A8BED1800F8EF8E /* Images.xcassets */,
 				5E75E3B21A8BED1800F8EF8E /* LaunchScreen.xib */,
 				5E75E3A31A8BED1800F8EF8E /* Supporting Files */,
+				5E75E3C91A8BEDD000F8EF8E /* Object.swift */,
+				5E75E3CB1A8C036200F8EF8E /* Constants.swift */,
+				5E75E3CD1A8C106500F8EF8E /* Building.swift */,
+				5E75E3CF1A8C107000F8EF8E /* Road.swift */,
+				5E75E3D11A8C54AC00F8EF8E /* Player.swift */,
 			);
 			path = MechGameWorkspace;
 			sourceTree = "<group>";
@@ -200,7 +212,6 @@
 			files = (
 				5E75E3B41A8BED1800F8EF8E /* LaunchScreen.xib in Resources */,
 				5E75E3B11A8BED1800F8EF8E /* Images.xcassets in Resources */,
-				5E75E3A81A8BED1800F8EF8E /* GameScene.sks in Resources */,
 				5E75E3AF1A8BED1800F8EF8E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,8 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E75E3CC1A8C036200F8EF8E /* Constants.swift in Sources */,
+				5E75E3CE1A8C106500F8EF8E /* Building.swift in Sources */,
 				5E75E3AA1A8BED1800F8EF8E /* GameScene.swift in Sources */,
+				5E75E3D01A8C107000F8EF8E /* Road.swift in Sources */,
+				5E75E3D21A8C54AC00F8EF8E /* Player.swift in Sources */,
 				5E75E3AC1A8BED1800F8EF8E /* GameViewController.swift in Sources */,
+				5E75E3CA1A8BEDD000F8EF8E /* Object.swift in Sources */,
 				5E75E3A61A8BED1800F8EF8E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
