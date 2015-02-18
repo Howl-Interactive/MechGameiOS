@@ -11,7 +11,6 @@ import SpriteKit
 class GameScene: SKScene {
     
     var touch: CGPoint?
-    
     var objs = [Object]()
     var p: Player
     
@@ -26,7 +25,12 @@ class GameScene: SKScene {
         for var j: CGFloat = 14; j >= 0; j-- {
             for var i: CGFloat = 0; i < 9; i++ {
                 if j % 4 == 0 {
-                    addObject(Road(x: i * 40, y: j * 40, vertical: false))
+                    if i % 3 == 1 {
+                        addObject(Road(x: i * 40, y: j * 40))
+                    }
+                    else {
+                        addObject(Road(x: i * 40, y: j * 40, vertical: false))
+                    }
                 }
                 else if i % 3 == 1 {
                     addObject(Road(x: i * 40, y: j * 40, vertical: true))
@@ -43,10 +47,22 @@ class GameScene: SKScene {
         addChild(obj.sprite)
     }
     
+    func removeObject(obj: Object) {
+        obj.sprite.removeFromParent()
+        for var i = 0; i < objs.count; i++ {
+            if objs[i] === obj {
+                objs.removeAtIndex(i)
+                break
+            }
+        }
+    }
+    
     override func update(currentTime: CFTimeInterval) {
         for obj in objs {
             if let t = touch {
-                obj.onTouch(t)
+                if collisionPoint(t, obj) {
+                    obj.onTouch(t)
+                }
             }
             obj.update(currentTime)
         }
