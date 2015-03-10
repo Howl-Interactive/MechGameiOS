@@ -13,12 +13,12 @@ class Player : Object {
     override var y: CGFloat { get { return super.y } set(value) { sprite.position.y = value; sprite.zPosition = -y } }
     
     let SPEED: CGFloat = 5.0
-    var target: Object?, shootTarget: Object?
+    weak var target: Object?, shootTarget: Object?
     var cooldown = 0
-    let FIRE_RATE = 20
+    let FIRE_RATE = 10
     
     init(x: CGFloat, y: CGFloat) {
-        super.init(x: x, y: y, w: 20, h: 20, file: "building01.png", type: Type.PLAYER)
+        super.init(x: x, y: y, w: 20, h: 20, file: "player00.png", type: Type.PLAYER)
         sprite.zPosition = 1
     }
     
@@ -52,9 +52,36 @@ class Player : Object {
         }
     }
     
+    func onTouch(touch: CGPoint) {
+        var newTarget, newShootTarget: Object?
+        for obj in scene.objs {
+            if collisionPoint(touch, obj) {
+                if obj.type == Type.ENEMY || obj.type == Type.SOLID {
+                    newShootTarget = obj
+                }
+                else if obj.type == Type.NONE {
+                    newTarget = obj
+                }
+            }
+        }
+        if let t = newShootTarget {
+            shootTarget = newShootTarget
+        }
+        else if let t = newTarget {
+            target = newTarget
+        }
+    }
+    
     override func collision(obj: Object) {
-        if obj.type == Type.SOLID {
+        switch obj.type {
+        case .SOLID:
             solidCollision()
+            break
+        case .ENEMY:
+            isAlive = false
+            break
+        default:
+            break
         }
     }
     

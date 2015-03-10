@@ -72,12 +72,11 @@ func collisionLine(#x1: CGFloat, #y1: CGFloat, #x2: CGFloat, #y2: CGFloat, #x3: 
 }
 
 func collisionLine(#x1: CGFloat, #y1: CGFloat, #x2: CGFloat, #y2: CGFloat, #obj: Object) -> Bool {
-    for var i = 0; i < 4; i++ {
-        if collisionLine(x1: x1, y1: y1, x2: x2, y2: y2, x3: obj.x + (i % 2 == 0 ? -1 : 1) * obj.w / 2, y3: obj.y + (i < 2 ? -1 : 1) * obj.h / 2, x4: obj.x + (i + 1 % 2 == 0 ? -1 : 1) * obj.w / 2, y4: obj.y + (i + 1 < 2 ? -1 : 1) * obj.h / 2) {
-            return true
-        }
-    }
-    return false
+    return
+        collisionLine(x1: x1, y1: y1, x2: x2, y2: y2, x3: obj.x - obj.w / 2, y3: obj.y - obj.h / 2, x4: obj.x + obj.w / 2, y4: obj.y - obj.h / 2) ||
+        collisionLine(x1: x1, y1: y1, x2: x2, y2: y2, x3: obj.x - obj.w / 2, y3: obj.y - obj.h / 2, x4: obj.x - obj.w / 2, y4: obj.y + obj.h / 2) ||
+        collisionLine(x1: x1, y1: y1, x2: x2, y2: y2, x3: obj.x + obj.w / 2, y3: obj.y - obj.h / 2, x4: obj.x + obj.w / 2, y4: obj.y + obj.h / 2) ||
+        collisionLine(x1: x1, y1: y1, x2: x2, y2: y2, x3: obj.x - obj.w / 2, y3: obj.y + obj.h / 2, x4: obj.x + obj.w / 2, y4: obj.y + obj.h / 2)
 }
 
 func collisionLine(#line: Object, #rect: Object) -> Bool {

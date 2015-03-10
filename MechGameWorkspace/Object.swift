@@ -10,7 +10,7 @@ import SpriteKit
 
 class Object {
     
-    enum Type { case NONE, SOLID, PLAYER, FRIENDLY }
+    enum Type { case NONE, SOLID, PLAYER, FRIENDLY, ENEMY }
     var type: Type
     
     enum CollisionType { case RECTANGULAR, LINE }
@@ -29,10 +29,17 @@ class Object {
     var w: CGFloat { get { return size.width } set(value) { size.width = value } }
     var h: CGFloat { get { return size.height } set(value) { size.height = value } }
     
-    init(x: CGFloat, y: CGFloat, w: CGFloat = -1, h: CGFloat = -1, keepImageSize: Bool = false, file: String, type: Type = Type.NONE, collisionType: CollisionType = CollisionType.RECTANGULAR) {
+    var isAlive = true
+    
+    init(x: CGFloat, y: CGFloat, w: CGFloat = -1, h: CGFloat = -1, keepImageSize: Bool = false, file: String, color: UIColor? = nil, type: Type = Type.NONE, collisionType: CollisionType = CollisionType.RECTANGULAR) {
         self.type = type;
         self.collisionType = collisionType
-        sprite = SKSpriteNode(imageNamed: file)
+        if let c = color {
+            sprite = SKSpriteNode(color: c, size: CGSize(width: 40, height: 40))
+        }
+        else {
+            sprite = SKSpriteNode(imageNamed: file)
+        }
         sprite.position = CGPoint(x: x, y: y)
         sprite.zPosition = -5000;
         if let textureSize: CGSize = sprite.texture?.size() {
@@ -59,17 +66,7 @@ class Object {
     }
     
     func update(currentTime: CFTimeInterval) {
-        move()
-    }
-    
-    func onTouch(touch: CGPoint) {
-        if self is Road {
-            scene.p.target = self
-        }
-        else if self is Building {
-            scene.p.shootTarget = self
-        }
-
+        move(vel)
     }
     
     func move(x: CGFloat, y: CGFloat) {
@@ -78,7 +75,7 @@ class Object {
     }
     
     func move(point: CGPoint) {
-        move(point.x, y: point.y)
+        move()
     }
     
     func move() {
