@@ -11,12 +11,14 @@ import SpriteKit
 
 class Enemy : Object {
     
+    var speed: CGFloat = 3
+    
     init(x: CGFloat, y: CGFloat) {
         super.init(x: x, y: y, w: 20, h: 20, file: "enemy00.png", type: Type.ENEMY)
-        vel = CGPoint(x: 0, y: -5)
     }
     
     override func update(currentTime: CFTimeInterval) {
+        vel = CGPoint(x: 0, y: -5)//CGPoint(x: speed * (x < scene.p.x ? 1 : -1), y: speed * (y < scene.p.y ? 1 : -1))
         super.update(currentTime)
         if y < -200 || y > HEIGHT + 200 {
             isAlive = false
@@ -25,11 +27,15 @@ class Enemy : Object {
     
     override func collision(obj: Object) {
         switch obj.type {
+        case .SOLID:
+            solidCollision(obj)
+            break
         case .PLAYER:
-            obj.isAlive = false
+            obj.takeDamage(self)
+            scene.p.spaz()
             break
         case .FRIENDLY:
-            isAlive = false
+            takeDamage(obj)
             break
         default:
             break

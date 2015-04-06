@@ -11,16 +11,21 @@ import Darwin
 
 class Laser : Object {
     
+    var frame = 1
+    let numFrames = 9
+    let angle: CGFloat
+    
     init(x: CGFloat, y: CGFloat, target: Object) {
-        var length:CGFloat = 1//distance(CGPoint(x: x, y: y), target.pos)
-        var width: CGFloat = 3
-        super.init(x: x, y: y, w: width, h: length, file: "", color: UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0), type: Type.FRIENDLY, collisionType: CollisionType.LINE)
-        var angle = atan2(target.y - y, target.x - x)
-        sprite.anchorPoint = CGPoint(x: 0, y: 0)
+        var length: CGFloat = 1
+        var width: CGFloat = 20
+        angle = atan2(target.y - y, target.x - x)
+        super.init(x: x, y: y, w: 1, h: length, file: "lazer_beam01.png", type: Type.FRIENDLY, collisionType: CollisionType.LINE)
+        sprite.anchorPoint = CGPoint(x: 0.5, y: 0)
         sprite.runAction(SKAction.rotateToAngle(angle - CGFloat(M_PI_2), duration: NSTimeInterval(0)))
-        x2 = x + length * cos(angle) - width * sin(angle)
-        y2 = y + length * sin(angle) + width * cos(angle)
-        
+        sprite.color = COLORS[Int(arc4random_uniform(UInt32(COLORS.count)))]
+        sprite.colorBlendFactor = 1.0
+        x2 = x + length * cos(angle) - 0 * sin(angle)
+        y2 = y + length * sin(angle) + 0 * cos(angle)
         var collisions = getCollisionsOfType(Type.SOLID)
         var collisions2 = getCollisionsOfType(Type.ENEMY)
         for var i = 0; i < collisions2.count; i++ {
@@ -28,8 +33,8 @@ class Laser : Object {
         }
         while collisions.count == 0 {
             length += 10
-            x2 = x + length * cos(angle) - width * sin(angle)
-            y2 = y + length * sin(angle) + width * cos(angle)
+            x2 = x + length * cos(angle) - 0 * sin(angle)
+            y2 = y + length * sin(angle) + 0 * cos(angle)
             collisions = getCollisionsOfType(Type.SOLID)
             collisions2 = getCollisionsOfType(Type.ENEMY)
             for var i = 0; i < collisions2.count; i++ {
@@ -49,20 +54,35 @@ class Laser : Object {
     var counter = 0
     override func update(currentTime: CFTimeInterval) {
         super.update(currentTime)
-        if counter++ > 5 {
+        type = Type.NONE
+        if frame == numFrames {
             scene.removeObject(self)
+        }
+        else {
+            var tempX = x, tempY = y
+            sprite.removeFromParent()
+            sprite = SKSpriteNode(imageNamed: "lazer_beam0\(++frame).png")
+            sprite.position = CGPoint(x: tempX, y: tempY)
+            sprite.anchorPoint = CGPoint(x: 0.5, y: 0)
+            sprite.zPosition = -5000
+            sprite.runAction(SKAction.rotateToAngle(angle - CGFloat(M_PI_2), duration: NSTimeInterval(0)))
+            sprite.xScale = size.width / sprite.size.width
+            sprite.yScale = size.height / sprite.size.height
+            sprite.color = COLORS[Int(arc4random_uniform(UInt32(COLORS.count)))]
+            sprite.colorBlendFactor = 1.0
+            scene.addChild(sprite)
         }
     }
     
     override func collision(obj: Object) {
         switch obj.type {
         case .SOLID:
-            obj.isAlive = false
+            obj.takeDamage(self)
             scene.addObject(Tree(x: obj.x, y: obj.y))
-            scene.addObject(Explosion(x: x2!, y: y2!))
+            scene.addObject(Explosion(x: obj.x, y: obj.y))
             break
         case .ENEMY:
-            obj.isAlive = false
+            obj.takeDamage(self)
             scene.addObject(Explosion(x: x2!, y: y2!))
             break
         default:

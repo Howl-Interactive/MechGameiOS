@@ -10,7 +10,7 @@ import SpriteKit
 
 class Object {
     
-    enum Type { case NONE, SOLID, PLAYER, FRIENDLY, ENEMY }
+    enum Type { case NONE, SOLID, PLAYER, FRIENDLY, ENEMY, PICKUP }
     var type: Type
     
     enum CollisionType { case RECTANGULAR, LINE }
@@ -29,6 +29,9 @@ class Object {
     var w: CGFloat { get { return size.width } set(value) { size.width = value } }
     var h: CGFloat { get { return size.height } set(value) { size.height = value } }
     
+    var health = 100
+    var damage = 50
+    var invulnerable = 0, invulnerableTime = 5
     var isAlive = true
     
     init(x: CGFloat, y: CGFloat, w: CGFloat = -1, h: CGFloat = -1, keepImageSize: Bool = false, file: String, color: UIColor? = nil, type: Type = Type.NONE, collisionType: CollisionType = CollisionType.RECTANGULAR) {
@@ -66,6 +69,7 @@ class Object {
     }
     
     func update(currentTime: CFTimeInterval) {
+        if invulnerable != 0 { invulnerable-- }
         move(vel)
     }
     
@@ -124,7 +128,7 @@ class Object {
     
     func collision(obj: Object) { }
     
-    func solidCollision() {
+    func solidCollision(obj: Object) {
         if vel.x != 0 {
             x -= getXStep() * (vel.x > 0 ? 1 : -1)
             vel.x = 0
@@ -145,6 +149,16 @@ class Object {
             return collisionLine(line: obj, rect: self)
         default:
             return false
+        }
+    }
+    
+    func takeDamage(obj: Object) {
+        if invulnerable == 0 {
+            health -= obj.damage
+            invulnerable = invulnerableTime
+            if health <= 0 {
+                isAlive = false
+            }
         }
     }
 }

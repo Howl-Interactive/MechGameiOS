@@ -14,6 +14,7 @@ class GameScene: SKScene {
     
     var objs = [Object]()
     var p: Player
+    var background: Background
     
     let tileSize: CGFloat = 40, cols: CGFloat = 9, rows: CGFloat = 15, yScroll: CGFloat = -2
     var scrollOffset: CGFloat = 0
@@ -24,7 +25,9 @@ class GameScene: SKScene {
     
     override init(size: CGSize) {
         p = Player(x: WIDTH / 2, y: 200)
+        background = Background()
         super.init(size: size)
+        addChild(background)
         addObject(p)
         addSection(0)
         addSection(tileSize * rows)
@@ -77,6 +80,7 @@ class GameScene: SKScene {
     var counter = 0
     let spawnTimer = 100
     override func update(currentTime: CFTimeInterval) {
+        background.update()
         if counter-- == 0 {
             addObject(Enemy(x: CGFloat(40 + arc4random_uniform(3) * 120), y: HEIGHT + 100))
             counter = spawnTimer

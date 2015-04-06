@@ -10,7 +10,25 @@ import SpriteKit
 
 class Road : Object {
     
+    var spazTime = 0
+    
     init(x: CGFloat, y: CGFloat, vertical: Bool? = nil) {
         super.init(x: x, y: y, file: vertical == nil ? "road_m.png" : vertical! ? "road_v.png" : "road_h.png")
+        sprite.color = UIColor.redColor()
+        sprite.colorBlendFactor = 0.0
+    }
+    
+    override func update(currentTime: CFTimeInterval) {
+        super.update(currentTime)
+        if spazTime-- > 0 {
+            if spazTime % 2 == 1 {
+                //sprite.runAction(SKAction.hide())
+                sprite.colorBlendFactor = 1.0
+            }
+            else {
+                //sprite.runAction(SKAction.unhide())
+                sprite.colorBlendFactor = 0.0
+            }
+        }
     }
 }

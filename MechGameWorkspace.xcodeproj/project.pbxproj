@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E060BCF1AD1DAEA00FF1490 /* Pickup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E060BCE1AD1DAEA00FF1490 /* Pickup.swift */; };
+		5E0898EC1ACB817A0040E227 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0898EB1ACB817A0040E227 /* Background.swift */; };
 		5E2B22FB1A9037410085BDE7 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B22FA1A9037410085BDE7 /* Laser.swift */; };
 		5E3D32571A959A60009D5DAF /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D32561A959A60009D5DAF /* Tree.swift */; };
 		5E3D32591A959C99009D5DAF /* Explosion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D32581A959C99009D5DAF /* Explosion.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E060BCE1AD1DAEA00FF1490 /* Pickup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pickup.swift; sourceTree = "<group>"; };
+		5E0898EB1ACB817A0040E227 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		5E2B22FA1A9037410085BDE7 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
 		5E3D32561A959A60009D5DAF /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		5E3D32581A959C99009D5DAF /* Explosion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explosion.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				5E3D32561A959A60009D5DAF /* Tree.swift */,
 				5E3D32581A959C99009D5DAF /* Explosion.swift */,
 				5EBF0D961A95B17D00B0A22E /* Enemy.swift */,
+				5E0898EB1ACB817A0040E227 /* Background.swift */,
+				5E060BCE1AD1DAEA00FF1490 /* Pickup.swift */,
 			);
 			path = MechGameWorkspace;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E75E3CC1A8C036200F8EF8E /* Constants.swift in Sources */,
+				5E0898EC1ACB817A0040E227 /* Background.swift in Sources */,
 				5E3D32571A959A60009D5DAF /* Tree.swift in Sources */,
 				5EBF0D971A95B17D00B0A22E /* Enemy.swift in Sources */,
 				5E2B22FB1A9037410085BDE7 /* Laser.swift in Sources */,
@@ -253,6 +260,7 @@
 				5E463D9E1A94031700405B19 /* Functions.swift in Sources */,
 				5E75E3AA1A8BED1800F8EF8E /* GameScene.swift in Sources */,
 				5E75E3D01A8C107000F8EF8E /* Road.swift in Sources */,
+				5E060BCF1AD1DAEA00FF1490 /* Pickup.swift in Sources */,
 				5E3D32591A959C99009D5DAF /* Explosion.swift in Sources */,
 				5E75E3D21A8C54AC00F8EF8E /* Player.swift in Sources */,
 				5E75E3AC1A8BED1800F8EF8E /* GameViewController.swift in Sources */,

@@ -14,14 +14,31 @@ class Explosion : Object {
     let numFrames = 12
     
     var rotation: CGFloat
+    let spinAmount: CGFloat = 0.2
     
-    init(x: CGFloat, y: CGFloat) {
+    let diameter: CGFloat
+    
+    var num: Int
+    let numExplosions = 2
+    var originX: CGFloat, originY: CGFloat
+    var counter = 0, offset = 1
+    
+    init(x: CGFloat, y: CGFloat, num: Int = 0) {
         rotation = CGFloat(arc4random_uniform(628)) / CGFloat(100)
-        super.init(x: x, y: y, w: 60, h: 60, file: "explosion1.png")
+        self.diameter = CGFloat(arc4random_uniform(30) + 10)
+        self.num = num
+        self.originX = x
+        self.originY = y
+        super.init(x: x + CGFloat(arc4random_uniform(40)) - 20, y: y + CGFloat(arc4random_uniform(40)) - 20, w: diameter, h: diameter, file: "explosion1.png")
         sprite.runAction(SKAction.rotateToAngle(rotation, duration: NSTimeInterval(0)))
+        sprite.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        sprite.zPosition = 5
     }
     
     override func update(currentTime: CFTimeInterval) {
+        if num < numExplosions && ++counter == offset {
+            scene.addObject(Explosion(x: originX, y: originY, num: num + 1))
+        }
         if ++frame == numFrames {
             isAlive = false
             return
@@ -30,12 +47,13 @@ class Explosion : Object {
         sprite.removeFromParent()
         sprite = SKSpriteNode(imageNamed: "explosion" + String(frame) + ".png")
         sprite.position = CGPoint(x: tempX, y: tempY)
-        sprite.zPosition = -5000;
+        sprite.zPosition = 5
+        rotation += spinAmount
         sprite.runAction(SKAction.rotateToAngle(rotation, duration: NSTimeInterval(0)))
-        if let textureSize: CGSize = sprite.texture?.size() {
-            let aspectRatio = textureSize.width / textureSize.height
-            sprite.size = CGSize(width: 40, height: ceil(40 / aspectRatio))
-        }
+        sprite.size = CGSize(width: diameter, height: diameter)
+        //sprite.color = COLORS[Int(arc4random_uniform(UInt32(COLORS.count)))]
+        //sprite.colorBlendFactor = 1.0
+        sprite.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         scene.addChild(sprite)
     }
 }

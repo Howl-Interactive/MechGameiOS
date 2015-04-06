@@ -23,7 +23,14 @@ class Player : Object {
     }
     
     override func update(currentTime: CFTimeInterval) {
+        sprite.zPosition = -y
         super.update(currentTime)
+        if let t = shootTarget {
+            sprite.runAction(SKAction.rotateToAngle(atan2(t.y - y, t.x - x) - CGFloat(M_PI_2), duration: NSTimeInterval(0)))
+        }
+        else if let t = target {
+            sprite.runAction(SKAction.rotateToAngle(atan2(t.y - y, t.x - x) - CGFloat(M_PI_2), duration: NSTimeInterval(0)))
+        }
         shoot()
         if cooldown != 0 {
             cooldown--
@@ -72,21 +79,35 @@ class Player : Object {
         }
     }
     
+    func spaz() {
+        var spazTime = 7
+        for object in scene.objs {
+            if object is Building {
+                (object as Building).spazTime = spazTime
+            }
+            if object is Road {
+                (object as Road).spazTime = spazTime
+            }
+        }
+        scene.background.spazTime = spazTime
+    }
+    
     override func collision(obj: Object) {
         switch obj.type {
         case .SOLID:
-            solidCollision()
+            solidCollision(obj)
             break
         case .ENEMY:
-            isAlive = false
+            spaz()
+            takeDamage(obj)
             break
         default:
             break
         }
     }
     
-    override func solidCollision() {
-        super.solidCollision()
+    override func solidCollision(obj: Object) {
+        super.solidCollision(obj)
         target = nil
     }
 }
