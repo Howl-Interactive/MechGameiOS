@@ -13,5 +13,6 @@ class Tree : Object {
     
     init(x: CGFloat, y: CGFloat) {
         super.init(x: x, y: y, w: 40, h: 40, file: "trees01.png", type: Type.NONE)
+        sprite.zPosition = -5000
     }
 }

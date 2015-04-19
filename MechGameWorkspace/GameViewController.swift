@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let skView = view as SKView
+        let skView = view as! SKView
         skView.multipleTouchEnabled = false
         
         skView.showsFPS = true
@@ -37,19 +37,19 @@ class GameViewController: UIViewController {
     }
     
     func calcPoint(touches: NSSet) {
-        var touch = (touches.anyObject()! as UITouch).locationInView(self.view)
+        var touch = (touches.anyObject()! as! UITouch).locationInView(self.view)
         scene.onTouch(CGPoint(x: touch.x, y: HEIGHT - touch.y))
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         calcPoint(touches)
     }
     
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         calcPoint(touches)
     }
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         scene.onTouchRelease()
     }
 }

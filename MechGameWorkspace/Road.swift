@@ -20,6 +20,7 @@ class Road : Object {
     
     override func update(currentTime: CFTimeInterval) {
         super.update(currentTime)
+        sprite.zPosition = -5000;
         if spazTime-- > 0 {
             if spazTime % 2 == 1 {
                 //sprite.runAction(SKAction.hide())

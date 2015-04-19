@@ -24,7 +24,6 @@ class Building : Object {
     
     override func update(currentTime: NSTimeInterval) {
         if invulnerable != 0 { invulnerable-- }
-        sprite.zPosition = -y
         if y < -200 {
             isAlive = false
         }
@@ -44,9 +43,10 @@ class Building : Object {
                 sprite.colorBlendFactor = 0.0
             }
         }
+        sprite.zPosition = -y
     }
     
-    override func collision(obj: Object) {
+    /*override func collision(obj: Object) {
         switch obj.type {
         case .FRIENDLY:
             takeDamage(obj)
@@ -55,11 +55,12 @@ class Building : Object {
         default:
             break;
         }
-    }
+    }*/
     
     override func takeDamage(obj: Object) {
         super.takeDamage(obj)
         if !isAlive {
+            scene.addObject(Tree(x: x, y: y))
             if arc4random_uniform(5) == 0 {
                 scene.addObject(Pickup(x: x, y: y))
             }

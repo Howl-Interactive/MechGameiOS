@@ -16,7 +16,7 @@ class Background : SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override init() {
+    init() {
         super.init(texture: nil, color: UIColor.whiteColor(), size: CGSize(width: WIDTH, height: HEIGHT))
         anchorPoint = CGPoint.zeroPoint
         zPosition = -10000

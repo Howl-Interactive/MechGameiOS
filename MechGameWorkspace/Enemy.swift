@@ -18,7 +18,9 @@ class Enemy : Object {
     }
     
     override func update(currentTime: CFTimeInterval) {
-        vel = CGPoint(x: 0, y: -5)//CGPoint(x: speed * (x < scene.p.x ? 1 : -1), y: speed * (y < scene.p.y ? 1 : -1))
+        sprite.zPosition = -y
+        var diff = CGPoint(x: x - scene.p.x, y: y - scene.p.y)
+        vel = CGPoint(x: speed * (abs(diff.x) < 5 ? 0 : diff.x < 0 ? 1 : -1), y: speed * (abs(diff.y) < 5 ? 0 : diff.y < 0 ? 1 : -1))
         super.update(currentTime)
         if y < -200 || y > HEIGHT + 200 {
             isAlive = false

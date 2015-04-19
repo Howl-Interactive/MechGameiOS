@@ -21,6 +21,7 @@ class Laser : Object {
         angle = atan2(target.y - y, target.x - x)
         super.init(x: x, y: y, w: 1, h: length, file: "lazer_beam01.png", type: Type.FRIENDLY, collisionType: CollisionType.LINE)
         sprite.anchorPoint = CGPoint(x: 0.5, y: 0)
+        sprite.zPosition = 1
         sprite.runAction(SKAction.rotateToAngle(angle - CGFloat(M_PI_2), duration: NSTimeInterval(0)))
         sprite.color = COLORS[Int(arc4random_uniform(UInt32(COLORS.count)))]
         sprite.colorBlendFactor = 1.0
@@ -64,7 +65,7 @@ class Laser : Object {
             sprite = SKSpriteNode(imageNamed: "lazer_beam0\(++frame).png")
             sprite.position = CGPoint(x: tempX, y: tempY)
             sprite.anchorPoint = CGPoint(x: 0.5, y: 0)
-            sprite.zPosition = -5000
+            sprite.zPosition = 1
             sprite.runAction(SKAction.rotateToAngle(angle - CGFloat(M_PI_2), duration: NSTimeInterval(0)))
             sprite.xScale = size.width / sprite.size.width
             sprite.yScale = size.height / sprite.size.height
@@ -78,7 +79,6 @@ class Laser : Object {
         switch obj.type {
         case .SOLID:
             obj.takeDamage(self)
-            scene.addObject(Tree(x: obj.x, y: obj.y))
             scene.addObject(Explosion(x: obj.x, y: obj.y))
             break
         case .ENEMY:

@@ -44,7 +44,6 @@ class Object {
             sprite = SKSpriteNode(imageNamed: file)
         }
         sprite.position = CGPoint(x: x, y: y)
-        sprite.zPosition = -5000;
         if let textureSize: CGSize = sprite.texture?.size() {
             let aspectRatio = textureSize.width / textureSize.height
             sprite.size = CGSize(width: 40, height: ceil(40 / aspectRatio))
@@ -83,12 +82,17 @@ class Object {
     }
     
     func move() {
-        var xStep = getXStep(), yStep = getYStep()
+        if vel != CGPoint.zeroPoint {
+            x += vel.x
+            y += vel.y
+            handleCollisions()
+        }
+        /*var xStep = getXStep(), yStep = getYStep()
         for var i: CGFloat = 0; i < max(abs(vel.x), abs(vel.y)); i++ {
             x += xStep * (vel.x > 0 ? 1 : -1)
             y += yStep * (vel.y > 0 ? 1 : -1)
             handleCollisions()
-        }
+        }*/
     }
     
     private func getXStep() -> CGFloat {
@@ -129,14 +133,22 @@ class Object {
     func collision(obj: Object) { }
     
     func solidCollision(obj: Object) {
-        if vel.x != 0 {
+        x -= vel.x
+        if getCollisionsOfType(.SOLID).count != 0 {
+            x += vel.x
+            y -= vel.y
+            if getCollisionsOfType(.SOLID).count != 0 {
+                x -= vel.x
+            }
+        }
+        /*if vel.x != 0 {
             x -= getXStep() * (vel.x > 0 ? 1 : -1)
             vel.x = 0
         }
         if vel.y != 0 {
             y -= getYStep() * (vel.y > 0 ? 1 : -1)
             vel.y = 0
-        }
+        }*/
     }
     
     func isColliding(obj: Object) -> Bool {

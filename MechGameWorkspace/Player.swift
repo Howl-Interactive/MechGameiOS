@@ -19,7 +19,6 @@ class Player : Object {
     
     init(x: CGFloat, y: CGFloat) {
         super.init(x: x, y: y, w: 20, h: 20, file: "player00.png", type: Type.PLAYER)
-        sprite.zPosition = 1
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -83,10 +82,10 @@ class Player : Object {
         var spazTime = 7
         for object in scene.objs {
             if object is Building {
-                (object as Building).spazTime = spazTime
+                (object as! Building).spazTime = spazTime
             }
             if object is Road {
-                (object as Road).spazTime = spazTime
+                (object as! Road).spazTime = spazTime
             }
         }
         scene.background.spazTime = spazTime
