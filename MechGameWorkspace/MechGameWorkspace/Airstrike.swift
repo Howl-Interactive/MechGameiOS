@@ -30,7 +30,7 @@ class Airstrike : Object {
                 var c = counter - redLaserTime - delay
                 if c <= 8 {
                     if c <= 6 {
-                        audioController.play("shot03-2.wav")
+                        audioController.play("shot01-2.wav")
                     }
                     sprite.texture = SKTexture(imageNamed: "air_strike_laser\(c).png")
                 }

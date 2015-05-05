@@ -75,9 +75,8 @@ class GameScene: SKScene {
     }
     
     func gameOver() {
-        started = false
-        ui.addChild(ui.endScreen)
-        ui.endScreen.turnOn()
+        gameScene.started = false
+        addChild(PlayerDeath(x: p.x, y: p.y))
     }
     
     func addSection(offset: CGFloat) {

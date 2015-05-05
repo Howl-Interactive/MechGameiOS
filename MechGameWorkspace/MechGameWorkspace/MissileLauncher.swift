@@ -27,7 +27,7 @@ class MissileLauncher : Weapon {
                         gameScene.addObject(Missile(x: x, y: y, target: t, vel: CGPoint(x: cos(angle + CGFloat(M_PI_2)), y: sin(angle + CGFloat(M_PI_2))) * 3))
                         gameScene.addObject(Missile(x: x, y: y, target: t, vel: CGPoint(x: cos(angle - CGFloat(M_PI_2)), y: sin(angle - CGFloat(M_PI_2))) * 3))
                     }
-                    audioController.play("shot02-2.wav")
+                    audioController.play("shot03-2.wav")
                     burstCooldown = burstCooldownTime
                     burstNumber++
                 }

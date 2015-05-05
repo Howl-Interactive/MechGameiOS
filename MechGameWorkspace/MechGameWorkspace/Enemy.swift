@@ -67,7 +67,7 @@ class Enemy : Object {
         }
         if cooldown-- == 0 {
             gameScene.addObject(EnemyBullet(x: x, y: y))
-            audioController.play("shot02-2.wav")
+            audioController.play("shot03-2.wav")
             cooldown = fireRate
         }
         super.update(currentTime)

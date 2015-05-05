@@ -22,14 +22,12 @@ class EnemyDrop : Object {
     
     override func update(currentTime: CFTimeInterval) {
         if ++counter <= 33 {
-            if counter == 10 {
-                audioController.play("landing01.wav")
-            }
             sprite.texture = SKTexture(imageNamed: "enemy_drop\(++counter)")
         }
         else if counter <= 51 {
             sprite.texture = SKTexture(imageNamed: "air_strike_laser\(counter - 20)")
             if counter == 34 {
+                audioController.play("landing01.wav")
                 for obj in gameScene.objs {
                     if (obj is Building || obj is Enemy || obj is Player || obj is Road) && distance(pos, obj.pos) < splash {
                         obj.takeDamage(self)

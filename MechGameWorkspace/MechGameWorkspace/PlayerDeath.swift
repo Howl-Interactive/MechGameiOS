@@ -19,12 +19,19 @@ class PlayerDeath : SKSpriteNode {
     init(x: CGFloat, y: CGFloat) {
         let t = SKTexture(imageNamed: "player_die_1")
         super.init(texture: t, color: nil, size: t.size())
+        position = CGPoint(x: x, y: y)
+        gameScene.p.sprite.hidden = true
+        color = COLORS[Int(arc4random_uniform(UInt32(COLORS.count)))]
+        colorBlendFactor = 1.0
         runAction(SKAction.repeatAction(SKAction.customActionWithDuration(0.1, actionBlock: {(SKNode, CGFloat) in
-            if ++self.counter <= 29 {
-                self.texture = SKTexture(imageNamed: "title_\(self.counter).png")
+            if ++self.counter <= 16 {
+                self.texture = SKTexture(imageNamed: "player_die_\(self.counter).png")
+                self.color = COLORS[Int(arc4random_uniform(UInt32(COLORS.count)))]
             }
-            else if self.counter == 30 {
-                ui.endScreen.blackScreen.runAction(SKAction.fadeOutWithDuration(1), completion: { ui.endScreen.blackScreen.zPosition = -1 })
+            else if self.counter == 17 {
+                ui.addChild(ui.endScreen)
+                ui.endScreen.turnOn()
+                self.removeFromParent()
             }
         }), count: 18))
     }

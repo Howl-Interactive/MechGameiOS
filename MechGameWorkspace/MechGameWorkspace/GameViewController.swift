@@ -45,7 +45,6 @@ class GameViewController: UIViewController {
         var right = UISwipeGestureRecognizer(target: self, action: "swipe:")
         right.direction = .Right
         skView.addGestureRecognizer(right)
-        println("\(WIDTH) \(HEIGHT)")
     }
     
     func swipe(sender: UISwipeGestureRecognizer) {

@@ -45,6 +45,7 @@
 		5EBFDADC1AED6ADF0060D878 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFDADB1AED6ADF0060D878 /* Bullet.swift */; };
 		5ED50D051AF864CE0047D774 /* visitor1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5ED50D041AF8638F0047D774 /* visitor1.ttf */; };
 		5ED50D071AF876F60047D774 /* PlayerDeath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED50D061AF876F60047D774 /* PlayerDeath.swift */; };
+		5ED50D091AF880B10047D774 /* fuckit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5ED50D081AF880B10047D774 /* fuckit.wav */; };
 		5EFB7DB41AE3E1AE008D9768 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB7DB31AE3E1AE008D9768 /* Weapon.swift */; };
 		5EFB7DB61AE3E24F008D9768 /* LaserGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB7DB51AE3E24F008D9768 /* LaserGun.swift */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		5EBFDADB1AED6ADF0060D878 /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 		5ED50D041AF8638F0047D774 /* visitor1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = visitor1.ttf; sourceTree = "<group>"; };
 		5ED50D061AF876F60047D774 /* PlayerDeath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDeath.swift; sourceTree = "<group>"; };
+		5ED50D081AF880B10047D774 /* fuckit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fuckit.wav; sourceTree = "<group>"; };
 		5EFB7DB31AE3E1AE008D9768 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		5EFB7DB51AE3E24F008D9768 /* LaserGun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserGun.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +169,7 @@
 		5E75E3A31A8BED1800F8EF8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5ED50D081AF880B10047D774 /* fuckit.wav */,
 				5ED50D041AF8638F0047D774 /* visitor1.ttf */,
 				5E7C9F241AF71EA80026A07D /* shot03-2.wav */,
 				5E7C9F221AF71EA10026A07D /* shot01-2.wav */,
@@ -324,6 +327,7 @@
 				5E75E3B11A8BED1800F8EF8E /* Images.xcassets in Resources */,
 				5E7C9F211AF71E990026A07D /* hit03-2.wav in Resources */,
 				5E75E3AF1A8BED1800F8EF8E /* Main.storyboard in Resources */,
+				5ED50D091AF880B10047D774 /* fuckit.wav in Resources */,
 				5E65971D1AF71D7800F75785 /* landing01.wav in Resources */,
 				5E7C9F1F1AF71E8E0026A07D /* shot02-2.wav in Resources */,
 				5E7C9F231AF71EA10026A07D /* shot01-2.wav in Resources */,

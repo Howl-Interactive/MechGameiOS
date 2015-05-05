@@ -25,9 +25,6 @@ class PlayerDrop : Object {
     
     override func update(currentTime: CFTimeInterval) {
         if ++counter <= 29 {
-            if counter == 10 {
-                audioController.play("landing01.wav")
-            }
             sprite.texture = SKTexture(imageNamed: "enemy_drop\(counter)")
         }
         else if counter == 30 {
@@ -49,6 +46,7 @@ class PlayerDrop : Object {
         else if counter == 34 {
             sprite.texture = SKTexture(imageNamed: "air_strike_blank")
             explosionSprite.texture = SKTexture(imageNamed: "air_strike_laser\(counter - 16)")
+            audioController.play("landing01.wav")
         }
         else if counter <= 47 {
             if counter == 40 {

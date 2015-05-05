@@ -23,7 +23,7 @@ class LaserGun : Weapon {
             if doubleShot {
                 gameScene.addObject(Laser(x: x, y: y, extraDamage: extraDamage, target: atan2(t.y - y, t.x - x) + CGFloat(M_PI)))
             }
-            audioController.play("shot03-2.wav")
+            audioController.play("shot01-2.wav")
             cooldown = fireRate
         }
     }

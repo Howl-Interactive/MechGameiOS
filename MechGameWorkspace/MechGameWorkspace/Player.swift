@@ -15,8 +15,8 @@ class Player : Object {
     let SPEED: CGFloat = 5.0
     weak var target: Object?, shootTarget: Object?
     
-    var weapon: Weapon = LaserGun()
-//    var weapon: Weapon = Cannon()
+//    var weapon: Weapon = LaserGun()
+    var weapon: Weapon = Cannon()
 //    var weapon: Weapon = MissileLauncher()
     
     var shield: Shield?
@@ -28,10 +28,6 @@ class Player : Object {
         invulnerableTime = 50
         health = 250
         sprite.zPosition = -5001
-        weapon.upgrade()
-        weapon.upgrade()
-        weapon.upgrade()
-        health = 1
     }
     
     override func update(currentTime: CFTimeInterval) {

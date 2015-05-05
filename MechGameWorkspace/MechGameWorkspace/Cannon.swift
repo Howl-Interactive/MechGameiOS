@@ -27,7 +27,7 @@ class Cannon : Weapon {
                 gameScene.addObject(Bullet(x: x + cos(angle + CGFloat(M_PI_2)) * 10, y: y + cos(angle + CGFloat(M_PI_2) * 10), target: t))
                 gameScene.addObject(Bullet(x: x + cos(angle - CGFloat(M_PI_2)) * 10, y: y + cos(angle - CGFloat(M_PI_2) * 10), target: t))
             }
-            audioController.play("shot01-2.wav")
+            audioController.play("shot02-2.wav")
             cooldown = fireRate
         }
     }

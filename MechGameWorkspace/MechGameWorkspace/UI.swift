@@ -116,7 +116,7 @@ class PauseScreen : SKNode {
             let aspectRatio = textureSize.height / textureSize.width
             musicText.size = CGSize(width: ceil(height / aspectRatio), height: height)
         }
-        addChild(musicText)
+        //addChild(musicText)
         sfxText.position = CGPoint(x: WIDTH / 2, y: HEIGHT - 375)
         if let textureSize: CGSize = sfxText.texture?.size() {
             let aspectRatio = textureSize.height / textureSize.width
@@ -128,14 +128,14 @@ class PauseScreen : SKNode {
             let aspectRatio = textureSize.height / textureSize.width
             quitText.size = CGSize(width: ceil(height / aspectRatio), height: height)
         }
-        addChild(quitText)
+        //addChild(quitText)
         height = 25
         onOffButtonMusic.onClick = { audioController.toggleMusic(); self.onOffButtonMusic.toggleImage() }
         if let textureSize: CGSize = onOffButtonMusic.texture?.size() {
             let aspectRatio = textureSize.height / textureSize.width
             onOffButtonMusic.size = CGSize(width: ceil(height / aspectRatio), height: height)
         }
-        addChild(onOffButtonMusic)
+        //addChild(onOffButtonMusic)
         onOffButtonSFX.onClick = { audioController.toggleSFX(); self.onOffButtonSFX.toggleImage() }
         if let textureSize: CGSize = onOffButtonSFX.texture?.size() {
             let aspectRatio = textureSize.height / textureSize.width
@@ -335,6 +335,9 @@ class Logo : SKSpriteNode {
         super.init(texture: t, color: nil, size: t.size())
         runAction(SKAction.repeatAction(SKAction.customActionWithDuration(0.1, actionBlock: {(SKNode, CGFloat) in
             if ++self.counter <= 32 {
+                if self.counter == 2 {
+                    audioController.play("fuckit.wav")
+                }
                 self.texture = SKTexture(imageNamed: "howl05_\(self.counter).png")
             }
             else if self.counter == 40 {
