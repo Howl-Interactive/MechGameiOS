@@ -14,8 +14,8 @@ class Player : Object {
     
     let SPEED: CGFloat = 5.0
     weak var target: Object?, shootTarget: Object?
-    var cooldown = 0
-    let FIRE_RATE = 10
+    
+    var weapon: Weapon = LaserGun()
     
     init(x: CGFloat, y: CGFloat) {
         super.init(x: x, y: y, w: 20, h: 20, file: "player00.png", type: Type.PLAYER)
@@ -30,19 +30,7 @@ class Player : Object {
         else if let t = target {
             sprite.runAction(SKAction.rotateToAngle(atan2(t.y - y, t.x - x) - CGFloat(M_PI_2), duration: NSTimeInterval(0)))
         }
-        shoot()
-        if cooldown != 0 {
-            cooldown--
-        }
-    }
-    
-    func shoot() {
-        if let t = shootTarget {
-            if cooldown == 0 {
-                scene.addObject(Laser(x: x, y: y, target: t))
-                cooldown = FIRE_RATE
-            }
-        }
+        weapon.update(x: x, y: y, target: shootTarget)
     }
     
     override func move() {

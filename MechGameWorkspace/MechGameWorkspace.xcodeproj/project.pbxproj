@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E060BCF1AD1DAEA00FF1490 /* Pickup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E060BCE1AD1DAEA00FF1490 /* Pickup.swift */; };
+		5E0898EC1ACB817A0040E227 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0898EB1ACB817A0040E227 /* Background.swift */; };
+		5E2B22FB1A9037410085BDE7 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B22FA1A9037410085BDE7 /* Laser.swift */; };
+		5E2FE0211AF2D40100043F55 /* EnemyBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FE0201AF2D40100043F55 /* EnemyBullet.swift */; };
+		5E3D32571A959A60009D5DAF /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D32561A959A60009D5DAF /* Tree.swift */; };
+		5E3D32591A959C99009D5DAF /* Explosion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D32581A959C99009D5DAF /* Explosion.swift */; };
+		5E463D9E1A94031700405B19 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E463D9D1A94031700405B19 /* Functions.swift */; };
+		5E65971B1AF6F1B700F75785 /* DestroyedTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65971A1AF6F1B700F75785 /* DestroyedTile.swift */; };
+		5E65971D1AF71D7800F75785 /* landing01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E65971C1AF71D7800F75785 /* landing01.wav */; };
+		5E75E3A61A8BED1800F8EF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3A51A8BED1800F8EF8E /* AppDelegate.swift */; };
+		5E75E3AA1A8BED1800F8EF8E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3A91A8BED1800F8EF8E /* GameScene.swift */; };
+		5E75E3AC1A8BED1800F8EF8E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3AB1A8BED1800F8EF8E /* GameViewController.swift */; };
+		5E75E3AF1A8BED1800F8EF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E75E3AD1A8BED1800F8EF8E /* Main.storyboard */; };
+		5E75E3B11A8BED1800F8EF8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E75E3B01A8BED1800F8EF8E /* Images.xcassets */; };
+		5E75E3B41A8BED1800F8EF8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E75E3B21A8BED1800F8EF8E /* LaunchScreen.xib */; };
+		5E75E3C01A8BED1800F8EF8E /* MechGameWorkspaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3BF1A8BED1800F8EF8E /* MechGameWorkspaceTests.swift */; };
+		5E75E3CA1A8BEDD000F8EF8E /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3C91A8BEDD000F8EF8E /* Object.swift */; };
+		5E75E3CC1A8C036200F8EF8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3CB1A8C036200F8EF8E /* Constants.swift */; };
+		5E75E3CE1A8C106500F8EF8E /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3CD1A8C106500F8EF8E /* Building.swift */; };
+		5E75E3D01A8C107000F8EF8E /* Road.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3CF1A8C107000F8EF8E /* Road.swift */; };
+		5E75E3D21A8C54AC00F8EF8E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E75E3D11A8C54AC00F8EF8E /* Player.swift */; };
+		5E7C9F1F1AF71E8E0026A07D /* shot02-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E7C9F1E1AF71E8E0026A07D /* shot02-2.wav */; };
+		5E7C9F211AF71E990026A07D /* hit03-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E7C9F201AF71E990026A07D /* hit03-2.wav */; };
+		5E7C9F231AF71EA10026A07D /* shot01-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E7C9F221AF71EA10026A07D /* shot01-2.wav */; };
+		5E7C9F251AF71EA80026A07D /* shot03-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E7C9F241AF71EA80026A07D /* shot03-2.wav */; };
+		5E7C9F271AF71ED10026A07D /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C9F261AF71ED10026A07D /* AudioController.swift */; };
+		5E7C9F291AF7217F0026A07D /* EnemyDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C9F281AF7217F0026A07D /* EnemyDrop.swift */; };
+		5E7C9F2B1AF730170026A07D /* PlayerDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C9F2A1AF730170026A07D /* PlayerDrop.swift */; };
+		5E9C47B71AF2237D00B7F530 /* Airstrike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C47B61AF2237D00B7F530 /* Airstrike.swift */; };
+		5E9C47B91AF2281200B7F530 /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C47B81AF2281200B7F530 /* Shield.swift */; };
+		5EBF0D971A95B17D00B0A22E /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF0D961A95B17D00B0A22E /* Enemy.swift */; };
+		5EBFDAD41AED4FE80060D878 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFDAD31AED4FE80060D878 /* UI.swift */; };
+		5EBFDAD61AED6A620060D878 /* Cannon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFDAD51AED6A620060D878 /* Cannon.swift */; };
+		5EBFDAD81AED6A710060D878 /* MissileLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFDAD71AED6A710060D878 /* MissileLauncher.swift */; };
+		5EBFDADA1AED6AD80060D878 /* Missile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFDAD91AED6AD80060D878 /* Missile.swift */; };
+		5EBFDADC1AED6ADF0060D878 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFDADB1AED6ADF0060D878 /* Bullet.swift */; };
+		5ED50D051AF864CE0047D774 /* visitor1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5ED50D041AF8638F0047D774 /* visitor1.ttf */; };
+		5ED50D071AF876F60047D774 /* PlayerDeath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED50D061AF876F60047D774 /* PlayerDeath.swift */; };
+		5EFB7DB41AE3E1AE008D9768 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB7DB31AE3E1AE008D9768 /* Weapon.swift */; };
+		5EFB7DB61AE3E24F008D9768 /* LaserGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB7DB51AE3E24F008D9768 /* LaserGun.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5E75E3BA1A8BED1800F8EF8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E75E3981A8BED1800F8EF8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E75E39F1A8BED1800F8EF8E;
+			remoteInfo = MechGameWorkspace;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5E060BCE1AD1DAEA00FF1490 /* Pickup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pickup.swift; sourceTree = "<group>"; };
+		5E0898EB1ACB817A0040E227 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		5E2B22FA1A9037410085BDE7 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
+		5E2FE0201AF2D40100043F55 /* EnemyBullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyBullet.swift; sourceTree = "<group>"; };
+		5E3D32561A959A60009D5DAF /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		5E3D32581A959C99009D5DAF /* Explosion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explosion.swift; sourceTree = "<group>"; };
+		5E463D9D1A94031700405B19 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		5E65971A1AF6F1B700F75785 /* DestroyedTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestroyedTile.swift; sourceTree = "<group>"; };
+		5E65971C1AF71D7800F75785 /* landing01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = landing01.wav; sourceTree = "<group>"; };
+		5E75E3A01A8BED1800F8EF8E /* MechGameWorkspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MechGameWorkspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E75E3A41A8BED1800F8EF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E75E3A51A8BED1800F8EF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5E75E3A91A8BED1800F8EF8E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		5E75E3AB1A8BED1800F8EF8E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5E75E3AE1A8BED1800F8EF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5E75E3B01A8BED1800F8EF8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5E75E3B31A8BED1800F8EF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5E75E3B91A8BED1800F8EF8E /* MechGameWorkspaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MechGameWorkspaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E75E3BE1A8BED1800F8EF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E75E3BF1A8BED1800F8EF8E /* MechGameWorkspaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechGameWorkspaceTests.swift; sourceTree = "<group>"; };
+		5E75E3C91A8BEDD000F8EF8E /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		5E75E3CB1A8C036200F8EF8E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5E75E3CD1A8C106500F8EF8E /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		5E75E3CF1A8C107000F8EF8E /* Road.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Road.swift; sourceTree = "<group>"; };
+		5E75E3D11A8C54AC00F8EF8E /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		5E7C9F1E1AF71E8E0026A07D /* shot02-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "shot02-2.wav"; sourceTree = "<group>"; };
+		5E7C9F201AF71E990026A07D /* hit03-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "hit03-2.wav"; sourceTree = "<group>"; };
+		5E7C9F221AF71EA10026A07D /* shot01-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "shot01-2.wav"; sourceTree = "<group>"; };
+		5E7C9F241AF71EA80026A07D /* shot03-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "shot03-2.wav"; sourceTree = "<group>"; };
+		5E7C9F261AF71ED10026A07D /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		5E7C9F281AF7217F0026A07D /* EnemyDrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyDrop.swift; sourceTree = "<group>"; };
+		5E7C9F2A1AF730170026A07D /* PlayerDrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDrop.swift; sourceTree = "<group>"; };
+		5E9C47B61AF2237D00B7F530 /* Airstrike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airstrike.swift; sourceTree = "<group>"; };
+		5E9C47B81AF2281200B7F530 /* Shield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
+		5EBF0D961A95B17D00B0A22E /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		5EBFDAD31AED4FE80060D878 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		5EBFDAD51AED6A620060D878 /* Cannon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cannon.swift; sourceTree = "<group>"; };
+		5EBFDAD71AED6A710060D878 /* MissileLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissileLauncher.swift; sourceTree = "<group>"; };
+		5EBFDAD91AED6AD80060D878 /* Missile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Missile.swift; sourceTree = "<group>"; };
+		5EBFDADB1AED6ADF0060D878 /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
+		5ED50D041AF8638F0047D774 /* visitor1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = visitor1.ttf; sourceTree = "<group>"; };
+		5ED50D061AF876F60047D774 /* PlayerDeath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDeath.swift; sourceTree = "<group>"; };
+		5EFB7DB31AE3E1AE008D9768 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		5EFB7DB51AE3E24F008D9768 /* LaserGun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserGun.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5E75E39D1A8BED1800F8EF8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E75E3B61A8BED1800F8EF8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5E75E3971A8BED1800F8EF8E = {
+			isa = PBXGroup;
+			children = (
+				5E75E3A21A8BED1800F8EF8E /* MechGameWorkspace */,
+				5E75E3BC1A8BED1800F8EF8E /* MechGameWorkspaceTests */,
+				5E75E3A11A8BED1800F8EF8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5E75E3A11A8BED1800F8EF8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E75E3A01A8BED1800F8EF8E /* MechGameWorkspace.app */,
+				5E75E3B91A8BED1800F8EF8E /* MechGameWorkspaceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E75E3A21A8BED1800F8EF8E /* MechGameWorkspace */ = {
+			isa = PBXGroup;
+			children = (
+				5E75E3A51A8BED1800F8EF8E /* AppDelegate.swift */,
+				5E75E3AD1A8BED1800F8EF8E /* Main.storyboard */,
+				5E75E3B01A8BED1800F8EF8E /* Images.xcassets */,
+				5E75E3B21A8BED1800F8EF8E /* LaunchScreen.xib */,
+				5E75E3A31A8BED1800F8EF8E /* Supporting Files */,
+				5E75E3AB1A8BED1800F8EF8E /* GameViewController.swift */,
+				5E75E3A91A8BED1800F8EF8E /* GameScene.swift */,
+				5EBFDAD31AED4FE80060D878 /* UI.swift */,
+				5E7C9F261AF71ED10026A07D /* AudioController.swift */,
+				5E75E3CB1A8C036200F8EF8E /* Constants.swift */,
+				5E463D9D1A94031700405B19 /* Functions.swift */,
+				5E75E3C91A8BEDD000F8EF8E /* Object.swift */,
+				5EBFDAD21AED4F970060D878 /* Characters */,
+				5EBFDAD11AED4F4F0060D878 /* Environment */,
+				5EFB7DB21AE3E186008D9768 /* Weapons */,
+			);
+			path = MechGameWorkspace;
+			sourceTree = "<group>";
+		};
+		5E75E3A31A8BED1800F8EF8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5ED50D041AF8638F0047D774 /* visitor1.ttf */,
+				5E7C9F241AF71EA80026A07D /* shot03-2.wav */,
+				5E7C9F221AF71EA10026A07D /* shot01-2.wav */,
+				5E7C9F201AF71E990026A07D /* hit03-2.wav */,
+				5E7C9F1E1AF71E8E0026A07D /* shot02-2.wav */,
+				5E65971C1AF71D7800F75785 /* landing01.wav */,
+				5E75E3A41A8BED1800F8EF8E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5E75E3BC1A8BED1800F8EF8E /* MechGameWorkspaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				5E75E3BF1A8BED1800F8EF8E /* MechGameWorkspaceTests.swift */,
+				5E75E3BD1A8BED1800F8EF8E /* Supporting Files */,
+			);
+			path = MechGameWorkspaceTests;
+			sourceTree = "<group>";
+		};
+		5E75E3BD1A8BED1800F8EF8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5E75E3BE1A8BED1800F8EF8E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EBFDAD11AED4F4F0060D878 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				5E75E3CD1A8C106500F8EF8E /* Building.swift */,
+				5E3D32561A959A60009D5DAF /* Tree.swift */,
+				5E75E3CF1A8C107000F8EF8E /* Road.swift */,
+				5E0898EB1ACB817A0040E227 /* Background.swift */,
+				5E65971A1AF6F1B700F75785 /* DestroyedTile.swift */,
+			);
+			name = Environment;
+			sourceTree = "<group>";
+		};
+		5EBFDAD21AED4F970060D878 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				5E75E3D11A8C54AC00F8EF8E /* Player.swift */,
+				5EBF0D961A95B17D00B0A22E /* Enemy.swift */,
+				5E7C9F2A1AF730170026A07D /* PlayerDrop.swift */,
+				5E7C9F281AF7217F0026A07D /* EnemyDrop.swift */,
+				5ED50D061AF876F60047D774 /* PlayerDeath.swift */,
+			);
+			name = Characters;
+			sourceTree = "<group>";
+		};
+		5EFB7DB21AE3E186008D9768 /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				5EFB7DB31AE3E1AE008D9768 /* Weapon.swift */,
+				5EBFDAD51AED6A620060D878 /* Cannon.swift */,
+				5EBFDADB1AED6ADF0060D878 /* Bullet.swift */,
+				5EBFDAD71AED6A710060D878 /* MissileLauncher.swift */,
+				5EBFDAD91AED6AD80060D878 /* Missile.swift */,
+				5EFB7DB51AE3E24F008D9768 /* LaserGun.swift */,
+				5E2B22FA1A9037410085BDE7 /* Laser.swift */,
+				5E3D32581A959C99009D5DAF /* Explosion.swift */,
+				5E060BCE1AD1DAEA00FF1490 /* Pickup.swift */,
+				5E9C47B61AF2237D00B7F530 /* Airstrike.swift */,
+				5E9C47B81AF2281200B7F530 /* Shield.swift */,
+				5E2FE0201AF2D40100043F55 /* EnemyBullet.swift */,
+			);
+			name = Weapons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5E75E39F1A8BED1800F8EF8E /* MechGameWorkspace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E75E3C31A8BED1800F8EF8E /* Build configuration list for PBXNativeTarget "MechGameWorkspace" */;
+			buildPhases = (
+				5E75E39C1A8BED1800F8EF8E /* Sources */,
+				5E75E39D1A8BED1800F8EF8E /* Frameworks */,
+				5E75E39E1A8BED1800F8EF8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MechGameWorkspace;
+			productName = MechGameWorkspace;
+			productReference = 5E75E3A01A8BED1800F8EF8E /* MechGameWorkspace.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5E75E3B81A8BED1800F8EF8E /* MechGameWorkspaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E75E3C61A8BED1800F8EF8E /* Build configuration list for PBXNativeTarget "MechGameWorkspaceTests" */;
+			buildPhases = (
+				5E75E3B51A8BED1800F8EF8E /* Sources */,
+				5E75E3B61A8BED1800F8EF8E /* Frameworks */,
+				5E75E3B71A8BED1800F8EF8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E75E3BB1A8BED1800F8EF8E /* PBXTargetDependency */,
+			);
+			name = MechGameWorkspaceTests;
+			productName = MechGameWorkspaceTests;
+			productReference = 5E75E3B91A8BED1800F8EF8E /* MechGameWorkspaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5E75E3981A8BED1800F8EF8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = HowlInteractive;
+				TargetAttributes = {
+					5E75E39F1A8BED1800F8EF8E = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					5E75E3B81A8BED1800F8EF8E = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 5E75E39F1A8BED1800F8EF8E;
+					};
+				};
+			};
+			buildConfigurationList = 5E75E39B1A8BED1800F8EF8E /* Build configuration list for PBXProject "MechGameWorkspace" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5E75E3971A8BED1800F8EF8E;
+			productRefGroup = 5E75E3A11A8BED1800F8EF8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E75E39F1A8BED1800F8EF8E /* MechGameWorkspace */,
+				5E75E3B81A8BED1800F8EF8E /* MechGameWorkspaceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5E75E39E1A8BED1800F8EF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ED50D051AF864CE0047D774 /* visitor1.ttf in Resources */,
+				5E7C9F251AF71EA80026A07D /* shot03-2.wav in Resources */,
+				5E75E3B41A8BED1800F8EF8E /* LaunchScreen.xib in Resources */,
+				5E75E3B11A8BED1800F8EF8E /* Images.xcassets in Resources */,
+				5E7C9F211AF71E990026A07D /* hit03-2.wav in Resources */,
+				5E75E3AF1A8BED1800F8EF8E /* Main.storyboard in Resources */,
+				5E65971D1AF71D7800F75785 /* landing01.wav in Resources */,
+				5E7C9F1F1AF71E8E0026A07D /* shot02-2.wav in Resources */,
+				5E7C9F231AF71EA10026A07D /* shot01-2.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E75E3B71A8BED1800F8EF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5E75E39C1A8BED1800F8EF8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E75E3CC1A8C036200F8EF8E /* Constants.swift in Sources */,
+				5EFB7DB41AE3E1AE008D9768 /* Weapon.swift in Sources */,
+				5E0898EC1ACB817A0040E227 /* Background.swift in Sources */,
+				5E3D32571A959A60009D5DAF /* Tree.swift in Sources */,
+				5EBF0D971A95B17D00B0A22E /* Enemy.swift in Sources */,
+				5E2B22FB1A9037410085BDE7 /* Laser.swift in Sources */,
+				5E75E3CE1A8C106500F8EF8E /* Building.swift in Sources */,
+				5E463D9E1A94031700405B19 /* Functions.swift in Sources */,
+				5E75E3AA1A8BED1800F8EF8E /* GameScene.swift in Sources */,
+				5E2FE0211AF2D40100043F55 /* EnemyBullet.swift in Sources */,
+				5E75E3D01A8C107000F8EF8E /* Road.swift in Sources */,
+				5E060BCF1AD1DAEA00FF1490 /* Pickup.swift in Sources */,
+				5EBFDAD41AED4FE80060D878 /* UI.swift in Sources */,
+				5E3D32591A959C99009D5DAF /* Explosion.swift in Sources */,
+				5E75E3D21A8C54AC00F8EF8E /* Player.swift in Sources */,
+				5EBFDAD81AED6A710060D878 /* MissileLauncher.swift in Sources */,
+				5E7C9F2B1AF730170026A07D /* PlayerDrop.swift in Sources */,
+				5E75E3AC1A8BED1800F8EF8E /* GameViewController.swift in Sources */,
+				5E9C47B91AF2281200B7F530 /* Shield.swift in Sources */,
+				5EBFDADA1AED6AD80060D878 /* Missile.swift in Sources */,
+				5E7C9F271AF71ED10026A07D /* AudioController.swift in Sources */,
+				5E65971B1AF6F1B700F75785 /* DestroyedTile.swift in Sources */,
+				5E7C9F291AF7217F0026A07D /* EnemyDrop.swift in Sources */,
+				5E9C47B71AF2237D00B7F530 /* Airstrike.swift in Sources */,
+				5E75E3CA1A8BEDD000F8EF8E /* Object.swift in Sources */,
+				5EBFDAD61AED6A620060D878 /* Cannon.swift in Sources */,
+				5E75E3A61A8BED1800F8EF8E /* AppDelegate.swift in Sources */,
+				5ED50D071AF876F60047D774 /* PlayerDeath.swift in Sources */,
+				5EFB7DB61AE3E24F008D9768 /* LaserGun.swift in Sources */,
+				5EBFDADC1AED6ADF0060D878 /* Bullet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E75E3B51A8BED1800F8EF8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E75E3C01A8BED1800F8EF8E /* MechGameWorkspaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E75E3BB1A8BED1800F8EF8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E75E39F1A8BED1800F8EF8E /* MechGameWorkspace */;
+			targetProxy = 5E75E3BA1A8BED1800F8EF8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5E75E3AD1A8BED1800F8EF8E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E75E3AE1A8BED1800F8EF8E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5E75E3B21A8BED1800F8EF8E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E75E3B31A8BED1800F8EF8E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5E75E3C11A8BED1800F8EF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5E75E3C21A8BED1800F8EF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E75E3C41A8BED1800F8EF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MechGameWorkspace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5E75E3C51A8BED1800F8EF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MechGameWorkspace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5E75E3C71A8BED1800F8EF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MechGameWorkspaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MechGameWorkspace.app/MechGameWorkspace";
+			};
+			name = Debug;
+		};
+		5E75E3C81A8BED1800F8EF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MechGameWorkspaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MechGameWorkspace.app/MechGameWorkspace";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E75E39B1A8BED1800F8EF8E /* Build configuration list for PBXProject "MechGameWorkspace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E75E3C11A8BED1800F8EF8E /* Debug */,
+				5E75E3C21A8BED1800F8EF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E75E3C31A8BED1800F8EF8E /* Build configuration list for PBXNativeTarget "MechGameWorkspace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E75E3C41A8BED1800F8EF8E /* Debug */,
+				5E75E3C51A8BED1800F8EF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E75E3C61A8BED1800F8EF8E /* Build configuration list for PBXNativeTarget "MechGameWorkspaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E75E3C71A8BED1800F8EF8E /* Debug */,
+				5E75E3C81A8BED1800F8EF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5E75E3981A8BED1800F8EF8E /* Project object */;
+}
